@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container pt-4" id="movieReviewsContainer">
+        <h1 class="heading">Movie Reviews</h1>
+        <p class="para">MOVIE TITLE</p>
+        <input class="text-box" placeholder="Enter a Movie Name" type="text" id="titleInput" size="30" style="width: 300px;" />
+        <p class="para mt-3">YOUR REVIEW</p>
+        <textarea rows="6" cols="40" id="reviewTextarea" placeholder="Enter your Review">
+
+        </textarea>
+        <div class="addbutton">
+            <button class="btn btn-primary" id="addBtn">Add</button>
+        </div>
+        <div id="reviewsContainer">
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.heading {
+    font-family: "Lobster";
+    font-size: 25px;
+    font-weight: 1000;
+    text-align: center;
+
+}
+
+.para {
+    font-family: "Lobster";
+    font-size: 15px;
+    font-weight: 1000;
+    /* text-align: center; */
+}
+
+.text-box {
+    border-color: black;
+    border-width: 5px;
+}
+
+.text-box1 {
+    border-color: black;
+    border-width: 5px;
+
+}
+
+.addbutton {
+    text-align: right;
+}
+
+
+
+
+let button = document.getElementById('addBtn');
+button.onclick = function() {
+    let inputElement = document.getElementById('titleInput');
+    let textarea = document.getElementById('reviewTextarea');
+    let reviewContainer = document.getElementById('reviewsContainer');
+    let head = document.createElement("h1");
+    head.textContent = "MOVIE TITLE : " + inputElement.value;
+    head.classList.add("heading")
+    reviewContainer.appendChild(head);
+    let para = document.createElement('p');
+    para.textContent = "YOUr Review" + textarea.value;
+    reviewContainer.appendChild(para)
+}
